@@ -1,2 +1,26 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<h1>Edit Profile</h1>
+<%= form_for @user, html: { multipart: true } do |f| %>
+  <%= f.label :avatar, "Profile Picture" %>
+  <%= f.file_field :avatar %><br>
+
+  <%= f.label :first_name, "First Name" %>
+  <%= f.text_field :first_name%><br>
+
+  <%= f.label :last_name, "Last Name" %>
+  <%= f.text_field :last_name%><br>
+
+  <%= f.label :username, "Username" %>
+  <%= f.text_field :username%><br>
+
+  <%= f.label :email, "Email" %>
+  <%= f.text_field :email%><br>
+
+  <%= f.label :favorite, "Favorite Team" %>
+  <%= f.text_field :favorite%><br>
+
+  <%= f.label :password, "Password" %>
+  <%= f.password_field :password%><br>
+
+  <%= f.submit "Submit"%>
+
+<% end  %>
