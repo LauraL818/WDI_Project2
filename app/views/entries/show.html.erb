@@ -1,2 +1,5 @@
-<h1>Entries#show</h1>
-<p>Find me in app/views/entries/show.html.erb</p>
+<h1><%= @entry.title %></h1><br>
+<%= @entry.date %><br>
+<%= @entry.body %><br>
+<%= image_tag @entry.avatar.url(:medium)%><br>
+<%= link_to "Delete Entry", entry_path, method: :delete, data: ({confirm:"Are you sure you want to remove this entry?"}) %>

@@ -1,2 +1,17 @@
-<h1>Entries#edit</h1>
-<p>Find me in app/views/entries/edit.html.erb</p>
+<h1>Edit Entry</h1>
+<%= form_for @entry, html: { multipart: true } do |t|  %>
+
+<%= t.label :title, "Title" %>
+<%= t.text_field :title %><br>
+
+<%= t.label :date, "Date" %>
+<%= t.text_field :date %><br>
+
+<%= t.label :body, "Body" %>
+<%= t.text_field :body%><br>
+
+<%= t.label :avatar, "Upload Photo" %>
+<%= t.file_field :avatar %><br>
+
+  <%= t.submit "Update" %>
+<% end  %>
