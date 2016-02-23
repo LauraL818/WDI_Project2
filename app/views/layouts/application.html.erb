@@ -5,8 +5,21 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 </head>
 <body>
+  <% if logged_in? %>
+    <%= link_to 'Logout', logout_path %>
+  <%else  %>
+    <%= link_to 'Login', new_session_path %>
+<% end  %>
+
+<% if flash[:success] %>
+  <div class = "alert alert-success text-center"> <%= flash[:success] %></div>
+  <% elsif flash[:failure]  %>
+  <div class = "alert alert-danger text-center"> <%= flash[:failure] %></div>
+<% end %>
+<script>$('.alert').delay(2000).slideUp()</script>
 
 <%= yield %>
 
