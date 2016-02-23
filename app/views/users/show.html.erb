@@ -3,4 +3,5 @@
 <p><%= @user.username %></p>
 <p><%= @user.email %></p>
 <p><%= @user.favorite %></p>
+<p><%= link_to "Add New Entry", new_entry_path %></p>
 <%= link_to "Delete Profile", user_path, method: :delete, data:({confirm: "Are you sure you want to delete your profile?"}) %>
