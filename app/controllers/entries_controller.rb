@@ -13,7 +13,7 @@ class EntriesController < ApplicationController
   def create
     @entry = current_user.entries.new(entry_params)
     if @entry.save
-      redirect_to entries_path
+      redirect_to entry_path(@entry)
     end
   end
 
