@@ -5,6 +5,7 @@
 <p><%= @user.email %></p>
 <p><%= @user.favorite %></p>
 <p><%= link_to "Add New Entry", new_entry_path %></p>
+<%= link_to "Edit Profile", edit_user_path %>
 <%= link_to "Delete Profile", user_path, method: :delete, data:({confirm: "Are you sure you want to delete your profile?"}) %><br>
 <% @user.entries.each do |e| %>
 <%= link_to e.title, entry_path(e)%><br>

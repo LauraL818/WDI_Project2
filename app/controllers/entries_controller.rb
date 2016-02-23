@@ -35,12 +35,12 @@ class EntriesController < ApplicationController
   def destroy
     @entry = Entry.find(params[:id])
     if @entry.destroy
-      redirect_to entries_path
+      redirect_to user_path(@entry.user)
     end
   end
 
   private
   def entry_params
-    params.require(:entry).permit(:title, :body, :date, :avatar)
+    params.require(:entry).permit(:title, :body, :date, :avatar, stadium_attributes:[:id, :name])
   end
 end
