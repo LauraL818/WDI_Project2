@@ -1,4 +1,7 @@
 class EntriesController < ApplicationController
+  # before_action :authorize, only: [:edit, :update]
+  # before_action :correct_user, only: [:show, :new, :create, :edit, :update]
+
   def index
     @entries = Entry.all
   end
