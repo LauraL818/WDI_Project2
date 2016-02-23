@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_action :authorize, only: [:edit, :update]
-  before_action :correct_user, only: [:show, :new, :create, :edit, :update]
+  before_action :authorize, only: [:show,:edit, :update]
+  before_action :correct_user, only: [:show, :edit, :update]
 
   def index
     @users = User.all
