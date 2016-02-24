@@ -18,9 +18,12 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-.container {
+#login_screen {
   max-height: 500px;
   width: 100%;
+}
+#entry {
+  border: solid black 1px;
 }
 
 body {
