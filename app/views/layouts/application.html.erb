@@ -20,6 +20,8 @@
   <% end %>
 <% if logged_in? %>
   <%= render 'sessions/login' %>
+  <%else  %>
+    <%= render 'sessions/logout' %>
 <%end %>
 
 

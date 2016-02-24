@@ -1,7 +1,7 @@
 <div class="navbar navbar-inverse navbar-fixed-top">
   <div class="container">
-    
-    <div class="navbar-brand"> <%= link_to 'Baseball Journey', user_path(current_user) %></div>
+
+    <div class="navbar-brand"> <%= link_to 'Baseball Journey', new_session_path %></div>
 
     <button class = "navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
       <span class="icon-bar"></span>
@@ -11,7 +11,7 @@
 
     <div class="collapse navbar-collapse navHeaderCollapse">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Profile</a></li>
+        <li><%= link_to "Sign Up", new_user_path %></li>
         <li class = "dropdown" >
           <a href = "#" class="dropdown-toggle" data-toggle="dropdown">Stadiums <b class="caret"></b></a>
           <ul class="dropdown-menu">
@@ -20,16 +20,6 @@
             <% end %>
           </ul>
         </li>
-        <li class = "dropdown" >
-          <a href = "#" class="dropdown-toggle" data-toggle="dropdown"> Entries <b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <% current_user.entries.each do |e| %>
-            <li><%= link_to e.title, entry_path(e) %></li>
-            <% end %>
-          </ul>
-        </li>
-        <li> <%= link_to 'Logout', logout_path %></li>
-      </ul>
     </div>
   </div>
 </div>
