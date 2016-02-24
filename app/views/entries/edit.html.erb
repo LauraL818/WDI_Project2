@@ -4,6 +4,9 @@
 <%= t.label :title, "Title" %>
 <%= t.text_field :title %><br>
 
+<%= t.label :stadium_id, "Stadium" %>
+<%= t.collection_select :stadium_id, Stadium.all, :id, :name %><br>
+
 <%= t.label :date, "Date" %>
 <%= t.text_field :date %><br>
 
