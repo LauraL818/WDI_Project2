@@ -9,21 +9,14 @@
   <!-- <script>src="js/bootstrap.js"</script> -->
 </head>
 <body>
-  <!-- <% if logged_in? %>
-    <%= link_to 'Logout', logout_path %>
-  <%else  %>
-    <%= link_to 'Login', new_session_path %>
-  <% end  %> -->
-
   <% if flash[:failure]  %>
     <div class = "alert alert-danger text-center"> <%= flash[:failure] %></div>
   <% end %>
 <% if logged_in? %>
-  <%= render 'sessions/login' %>
+    <%= render 'sessions/login' %>
   <%else  %>
     <%= render 'sessions/logout' %>
 <%end %>
-
 
   <script>
   $('.alert').delay(2000).slideUp()
@@ -33,7 +26,7 @@
    }, function() {
        $(this).find('.dropdown-menu').first().stop(true, true).delay(50).slideUp(50)
    });
-})
+  })
 
   </script>
 
