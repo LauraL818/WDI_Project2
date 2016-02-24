@@ -18,15 +18,34 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-#login_screen {
+$primaryColor: green;
+
+.login_screen {
   max-height: 500px;
   width: 100%;
 }
+
+.carousel-caption h3 {
+  text-shadow: black 2px 1px;
+}
+.carousel-caption p {
+  text-shadow: black 2px 1px;
+}
+
 #entry {
-  border: solid black 1px;
+  background-color: gray;
+  border-radius: 20px;
 }
 
 body {
   padding-top: 40px;
   padding-bottom: 40px;
+}
+
+h1 {
+  color:$primaryColor;
+}
+
+p {
+  color: $primaryColor;
 }
