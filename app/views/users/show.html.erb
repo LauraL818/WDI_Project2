@@ -1,23 +1,40 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-1"><h1 class="text-center"><%= @user.first_name %></h1></div>
-  </div>
-  <div class="row">
-    <div class="col-md-4"><%= image_tag(@user.avatar.url(:thumb), class:"img-rounded") %></div>
-    <div id="entry" class="col-md-8"><% @user.entries.each do |e| %>
-      <h2 class="text-center"><%= link_to e.title, entry_path(e)%></h2>
-      <h5 class="col-md-6 col-md-offset-3 text-center"><%= e.stadium.name %></h5><br>
-      <h5 class="col-md-6 col-md-offset-3 text-center">Date: <%= e.date %></h5><br>
-      <%= e.body %><br>
-      <%= image_tag e.avatar.url(:medium)%><br>
-      <% end %>
+    <div class="col-md-3"><h1 class="text-center"><%= @user.first_name %></h1></div>
+    <div class="col-md-8 col-md-offset-1"><h1 class="text-center">Entry Feed</h1>
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <div class="btn btn-info btn-sm"><%= link_to "Add New Entry", new_entry_path, {style:'color:black;', class: "links"}%></div>
+        </div>
+      </div>
     </div>
   </div>
   <div class="row">
-    <div class="col-md-3 col-md-offset-1"><p>Favorite Team: <%= @user.favorite %></p></div>
+    <div class="col-md-3 info text-center"><%= image_tag(@user.avatar.url(:thumb), class:"img-rounded")%>
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <p><%= @user.favorite %></p>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-md-12 text-center">
+            <%= link_to "Edit Profile", edit_user_path, {style:'color:purple;', class: "links"} %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <%= link_to "Delete Profile", user_path, style:'color:purple', method: :delete, data:({confirm: "Are you sure you want to delete your profile?"}) %>
+          </div>
+        </div>
+    </div>
+      <div id="entry" class="col-md-8 col-md-offset-1"> <% @user.entries.each do |e| %>
+        <h2 class="text-center"><%= link_to e.title, entry_path(e)%></h2>
+        <h5 class="col-md-6 col-md-offset-3 text-center"><%= e.stadium.name %></h5><br>
+        <h5 class="col-md-6 col-md-offset-3 text-center">Date: <%= e.date %></h5><br>
+        <%= e.body %><br>
+        <%= image_tag e.avatar.url(:medium)%><br>
+        <% end %>
+      </div>
   </div>
-  <p><%= link_to "Add New Entry", new_entry_path %></p>
-  <%= link_to "Edit Profile", edit_user_path %>
-  <%= link_to "Delete Profile", user_path, method: :delete, data:({confirm: "Are you sure you want to delete your profile?"}) %><br>
 
 </div>

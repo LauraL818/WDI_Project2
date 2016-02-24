@@ -18,7 +18,14 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-$primaryColor: green;
+$primaryColor: black;
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
 
 .login_screen {
   max-height: 500px;
@@ -28,13 +35,26 @@ $primaryColor: green;
 .carousel-caption h3 {
   text-shadow: black 2px 1px;
 }
+
 .carousel-caption p {
   text-shadow: black 2px 1px;
 }
 
+.info {
+  background-color: gray;
+  @include border-radius(5px);
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.links {
+  color:white;
+}
+
 #entry {
   background-color: gray;
-  border-radius: 20px;
+  @include border-radius(20px);
+  margin-top: 10px;
 }
 
 body {

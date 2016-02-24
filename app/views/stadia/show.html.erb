@@ -1,4 +1,8 @@
 <h1><%= @stadium.name %></h1>
 <h5><%= @stadium.team %></h5>
 <h5><%= @stadium.location %></h5>
-<img src="/photos/<%= @stadium.photo%>" alt="coors photo" height="500" width="500" />
+<h5>Opened: <%= @stadium.year %></h5>
+<h5>History: <%= @stadium.history %></h5>
+<h5>Capacity: <%= @stadium.capacity %></h5>
+<h5>Best Feature: <%= @stadium.feature %></h5>
+<img src="/photos/<%= @stadium.photo%>" alt="stadium photo" height="500" width="500" />
