@@ -2,7 +2,9 @@
 <h3>By: <%= @entry.user.first_name%></h3>
 <h5>Date: <%= @entry.date %></h5>
 <p><%= @entry.body %></p><br>
+<p><%= @entry.stadium.name %></p><br>
 <%= image_tag @entry.avatar.url(:medium)%><br>
 <%= link_to "Edit Entry", edit_entry_path %>
 <%= link_to "Back to Profile", user_path(@entry.user) %>
 <%= link_to "Delete Entry", entry_path, method: :delete, data: ({confirm:"Are you sure you want to remove this entry?"}) %>
+<p>

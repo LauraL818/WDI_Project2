@@ -41,6 +41,6 @@ class EntriesController < ApplicationController
 
   private
   def entry_params
-    params.require(:entry).permit(:title, :body, :date, :avatar, stadium_attributes:[:id, :name])
+    params.require(:entry).permit(:title, :body, :date, :avatar,:stadium_id, stadium_attributes: [:id, :name])
   end
 end
