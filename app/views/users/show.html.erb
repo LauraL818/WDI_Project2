@@ -27,12 +27,17 @@
           </div>
         </div>
     </div>
-      <div id="entry" class="col-md-8 col-md-offset-1"> <% @user.entries.each do |e| %>
-        <h2 class="text-center"><%= link_to e.title, entry_path(e)%></h2>
-        <h5 class="col-md-6 col-md-offset-3 text-center"><%= e.stadium.name %></h5><br>
-        <h5 class="col-md-6 col-md-offset-3 text-center">Date: <%= e.date %></h5><br>
+      <div id="entry" class="col-md-8 col-md-offset-1 text-center">
+        <% @user.entries.each do |e| %>
+        <div class="row">
+          <h2 class="text-center"><%= link_to e.title, entry_path(e)%></h2>
+        </div>
+        <div class="row">
+          <h5 class="col-md-3 col-md-offset-3"><%= e.stadium.name %></h5>
+          <h5 class="col-md-3">Date: <%= e.date %></h5>
+        </div>
         <%= e.body %><br>
-        <%= image_tag e.avatar.url(:medium)%><br>
+        <%= image_tag e.avatar.url(:medium), class:"style_image"%><br>
         <% end %>
       </div>
   </div>
