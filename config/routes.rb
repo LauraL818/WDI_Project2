@@ -4,8 +4,8 @@ Rails.application.routes.draw do
 root 'sessions#new'
 resources :users
 resources :entries
-get '/stadiums' => 'stadia#index'
-get '/stadiums/:id' => 'stadia#show'
+get '/stadiums' => 'stadia#index', as: :stadiums
+get '/stadiums/:id' => 'stadia#show', as: :stadium
 
 get 'logout' => 'sessions#destroy', as: :logout
 resources :sessions, only: [:new, :create]

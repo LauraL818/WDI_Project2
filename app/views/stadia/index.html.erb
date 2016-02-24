@@ -1,4 +1,9 @@
-<h1>Stadiums</h1>
-<% @stadiums.each do |s| %>
-<%= s.name %>, <%= s.team %><br>
-<% end  %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4"><h1>Stadiums</h1></div>
+  </div>
+  <img src="/photos/mlb.jpg" height="800px" width="1000px"/><br>
+  <% @stadiums.each do |s| %>
+  <%= link_to s.name, stadium_path(s) %>, <%= s.team %><br>
+  <% end  %>
+</container>

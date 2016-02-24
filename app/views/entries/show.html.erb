@@ -3,6 +3,8 @@
 <h5>Date: <%= @entry.date %></h5>
 <p><%= @entry.body %></p><br>
 <p><%= @entry.stadium.name %></p><br>
+<p><%= @entry.stadium.team %></p><br>
+<p><%= @entry.stadium.location %></p><br>
 <%= image_tag @entry.avatar.url(:medium)%><br>
 <%= link_to "Edit Entry", edit_entry_path %>
 <%= link_to "Back to Profile", user_path(@entry.user) %>

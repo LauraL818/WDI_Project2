@@ -13,16 +13,60 @@
     <%= link_to 'Logout', logout_path %>
   <%else  %>
     <%= link_to 'Login', new_session_path %>
-<% end  %>
+  <% end  %>
 
-<% if flash[:success] %>
-  <div class = "alert alert-success text-center"> <%= flash[:success] %></div>
-  <% elsif flash[:failure]  %>
-  <div class = "alert alert-danger text-center"> <%= flash[:failure] %></div>
-<% end %>
-<script>$('.alert').delay(2000).slideUp()</script>
+  <% if flash[:failure]  %>
+    <div class = "alert alert-danger text-center"> <%= flash[:failure] %></div>
+  <% end %>
 
-<%= yield %>
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+
+      <a href="#" class="navbar-brand">Baseball Journey</a>
+
+      <button class = "navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div class="collapse navbar-collapse navHeaderCollapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#">Profile</a></li>
+          <li class = "dropdown" >
+            <a href = "#" class="dropdown-toggle" data-toggle="dropdown">Stadiums <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <% Stadium.all.each do |s| %>
+              <li><%= link_to s.name, stadium_path(s) %></li>
+              <!-- <li><a href="#">Dodger Stadium</a></li>
+              <li><a href="#">Angels Stadium</a></li>
+              <li><a href="#">PNC Park</a></li> -->
+              <% end %>
+            </ul>
+          </li>
+          <li><a href="#">Entries</a></li>
+        </ul>
+
+      </div>
+
+    </div>
+  </div>
+
+
+
+  <script>
+  $('.alert').delay(2000).slideUp()
+  $(document).ready(function(){
+   $('.navbar .dropdown').hover(function() {
+       $(this).find('.dropdown-menu').first().stop(true, true).delay(100).slideDown(50);
+   }, function() {
+       $(this).find('.dropdown-menu').first().stop(true, true).delay(50).slideUp(50)
+   });
+})
+
+  </script>
+
+  <%= yield %>
 
 </body>
 </html>
