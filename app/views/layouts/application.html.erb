@@ -9,17 +9,24 @@
   <!-- <script>src="js/bootstrap.js"</script> -->
 </head>
 <body>
+
   <% if flash[:failure]  %>
     <div class = "alert alert-danger text-center"> <%= flash[:failure] %></div>
   <% end %>
-<% if logged_in? %>
-    <%= render 'sessions/login' %>
-  <%else  %>
-    <%= render 'sessions/logout' %>
-<%end %>
+
+  <% if flash[:success]  %>
+    <div class = "alert alert-success text-center"> <%= flash[:success] %></div>
+  <% end %>
+
+  <% if logged_in? %>
+      <%= render 'sessions/login' %>
+    <%else  %>
+      <%= render 'sessions/logout' %>
+  <%end %>
+
 
   <script>
-  $('.alert').delay(2000).slideUp()
+  $('.alert').delay(3000).slideUp()
   $(document).ready(function(){
    $('.navbar .dropdown').hover(function() {
        $(this).find('.dropdown-menu').first().stop(true, true).delay(100).slideDown(50);
@@ -30,7 +37,10 @@
 
   </script>
 
+
   <%= yield %>
+
+
 
 </body>
 </html>
