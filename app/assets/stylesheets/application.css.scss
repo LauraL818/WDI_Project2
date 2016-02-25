@@ -18,6 +18,9 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+$primaryColor: #446870;
+$secondaryColor: #CDF3FC;
+
 @mixin border-radius($radius) {
   -webkit-border-radius: $radius;
      -moz-border-radius: $radius;
@@ -56,11 +59,12 @@ padding-bottom: 40px;
 }
 
 .header {
-  color:white;
+  color:$secondaryColor;
   text-shadow: 1px 1px black;
 }
 
 .name {
+  color:$secondaryColor;
   padding-top: 10px;
   margin-top: -1px;
 }
@@ -68,19 +72,19 @@ padding-bottom: 40px;
 .delete-button {
   margin-top: 5px;
   font-weight: bold;
-  background-color:#446870;
+  background-color:$primaryColor;
   color:white;
 }
 
 .edit-button {
   color: #446870;
   font-weight: bold;
-  background-color:#CDF3FC;
+  background-color:$secondaryColor;
   margin-top: -5px;
 }
 
 #entry {
-  background-color: rgba(211, 190, 171, 0.7);;
+  background-color: rgba(211, 190, 171, 0.7);
   @include border-radius(2px);
   margin-top: 10px;
   padding-bottom: 20px;
@@ -94,8 +98,8 @@ padding-bottom: 40px;
 }
 
 #entry-button{
-  background-image: linear-gradient(#93AFB5, #3A575E);
-  border-color: #446870;
+  background-image: linear-gradient(#97B3BA, $primaryColor);
+  border-color: $primaryColor;
   text-shadow: 1px 1px black;
 }
 
@@ -108,4 +112,24 @@ padding-bottom: 40px;
 
 .post-body {
   margin: 0 10px;
+}
+
+.form-horizontal{
+  margin-top: 20px;
+  color: #FFF3E8;
+  text-shadow: 1px 1px black;
+  background-color: $primaryColor;
+  padding: 15px 0;
+
+}
+
+.member {
+  color:#CDF3FC;
+  text-shadow: 1px 1px #3A575E;
+}
+
+.new-member {
+  color: $primaryColor;
+  font-weight: bold;
+  background-color:$secondaryColor;
 }

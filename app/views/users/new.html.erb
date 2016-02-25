@@ -1,28 +1,92 @@
-<h1>Become a Member</h1>
 
-<%= form_for @user, html: { multipart: true } do |f| %>
-  <%= f.label :avatar, "Favorite Team Logo" %>
-  <%= f.file_field :avatar %><br>
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <h1 class="member">Become a Member</h1>
+    </div>
+  </div>
+  <!-- <%= form_for @user, html: { multipart: true } do |f| %>
 
-  <%= f.label :first_name, "First Name" %>
-  <%= f.text_field :first_name%><br>
+    <%= f.label :avatar, "Favorite Team Logo" %>
+   <%= f.file_field :avatar %>
 
-  <%= f.label :last_name, "Last Name" %>
-  <%= f.text_field :last_name%><br>
+    <%= f.label :first_name, "First Name" %>
+    <%= f.text_field :first_name%><br>
 
-  <%= f.label :username, "Username" %>
-  <%= f.text_field :username%><br>
+    <%= f.label :last_name, "Last Name" %>
+    <%= f.text_field :last_name%><br>
 
-  <%= f.label :email, "Email" %>
-  <%= f.email_field :email%><br>
+    <%= f.label :username, "Username" %>
+    <%= f.text_field :username%><br>
+
+    <%= f.label :email, "Email" %>
+    <%= f.email_field :email%><br>
 
 
-  <%= f.label :favorite, "Favorite Team" %>
-  <%= f.text_field :favorite%><br>
+    <%= f.label :favorite, "Favorite Team" %>
+    <%= f.text_field :favorite%><br>
 
-  <%= f.label :password, "Password" %>
-  <%= f.password_field :password%><br>
+    <%= f.label :password, "Password" %>
+    <%= f.password_field :password%><br>
 
-  <%= f.submit "Submit"%>
+    <%= f.submit "Submit"%>
 
-  <% end  %>
+    <% end  %> -->
+
+  <%= form_for @user, html: { multipart: true, :class => 'form-horizontal'} do |f| %>
+   <fieldset>
+     <div class="form-group">
+         <%= f.label :avatar, "Favorite Team's Logo", class: 'col-md-4 control-label' %>
+       <div class="col-md-5">
+         <%= f.file_field :avatar %>
+       </div>
+     </div>
+
+     <div class="form-group">
+         <%= f.label :first_name, 'First Name', class: 'col-md-4 control-label' %>
+       <div class="col-md-5">
+             <%= f.text_field :first_name, class: 'form-control', placeholder:'First Name'%>
+       </div>
+     </div>
+
+     <div class="form-group">
+         <%= f.label :last_name, 'Last Name', class: 'col-md-4 control-label' %>
+       <div class="col-md-5">
+             <%= f.text_field :last_name, class: 'form-control',  placeholder:'Last Name' %>
+       </div>
+     </div>
+
+     <div class="form-group">
+         <%= f.label :username, 'Username', class: 'col-md-4 control-label' %>
+       <div class="col-md-5">
+             <%= f.text_field :username, class: 'form-control', placeholder:'Username' %>
+       </div>
+     </div>
+
+     <div class="form-group">
+         <%= f.label :email, 'Email', class: 'col-md-4 control-label' %>
+       <div class="col-md-5">
+             <%= f.text_field :email, class: 'form-control', placeholder:'Email' %>
+       </div>
+     </div>
+
+     <div class="form-group">
+         <%= f.label :favorite, 'Favorite Team', class: 'col-md-4 control-label' %>
+       <div class="col-md-5">
+             <%= f.text_field :favorite, class: 'form-control', placeholder:'Favorite Team' %>
+       </div>
+     </div>
+
+     <div class="form-group">
+         <%= f.label :password, 'Password', class: 'col-md-4 control-label' %>
+       <div class="col-md-5">
+           <%= f.password_field :password, class: 'form-control', placeholder:'Password' %>
+       </div>
+     </div>
+
+
+         <div class="col-md-8 col-md-offset-4">
+             <%= f.submit 'Create Account', class: 'btn new-member' %>
+
+     </div>
+   </fieldset>
+<% end %>
