@@ -1,20 +1,51 @@
-<h1>Edit Entry</h1>
-<%= form_for @entry, html: { multipart: true } do |t|  %>
+<div class="row">
+  <div class="col-md-12 text-center">
+    <h1 class="member">Edit Entry</h1>
+  </div>
+</div>
 
-<%= t.label :title, "Title" %>
-<%= t.text_field :title %><br>
 
-<%= t.label :stadium_id, "Stadium" %>
-<%= t.collection_select :stadium_id, Stadium.all, :id, :name %><br>
+<%= form_for @entry, html: { multipart: true, class: 'form-horizontal add-entry' } do |t|  %>
+   <fieldset>
+     <div class="form-group">
+         <%= t.label :title, "Title", class: 'col-md-4 control-label' %>
+       <div class="col-md-5">
+         <%= t.text_field :title, class:'form-control' %>
+       </div>
+     </div>
 
-<%= t.label :date, "Date" %>
-<%= t.text_field :date %><br>
+     <div class="form-group">
+         <%= t.label :stadium_id, 'Stadium', class: 'col-md-4 control-label' %>
+       <div class="col-md-5">
+         <%= t.collection_select :stadium_id, Stadium.all, :id, :name, class: 'form-control'%>
+       </div>
+     </div>
 
-<%= t.label :body, "Body" %>
-<%= t.text_area :body%><br>
+     <div class="form-group">
+         <%= t.label :date, 'Date', class: 'col-md-4 control-label' %>
+       <div class="col-md-5">
+             <%= t.text_field :date, class: 'form-control'%>
+       </div>
+     </div>
 
-<%= t.label :avatar, "Upload Photo" %>
-<%= t.file_field :avatar %><br>
+     <div class="form-group">
+         <%= t.label :body, 'Details & Memories', class: 'col-md-4 control-label' %>
+       <div class="col-md-5">
+             <%= t.text_area :body, class: 'form-control' %>
+       </div>
+     </div>
 
-  <%= t.submit "Update" %>
-<% end  %>
+     <div class="form-group">
+         <%= t.label :avatar, 'Photo', class: 'col-md-4 control-label' %>
+       <div class="col-md-5">
+             <%= t.file_field :avatar%>
+       </div>
+     </div>
+
+      <div class="col-md-8 col-md-offset-4">
+        <%= t.submit 'Edit Entry', class: 'btn entry-success' %>
+     </div>
+   </fieldset>
+<% end %>
+<div class="col-md-5 col-md-offset-4 btn back-from-edit">
+  <%= link_to "Back to Profile", user_path(current_user), {style:'color: #446870;'}  %>  </div>

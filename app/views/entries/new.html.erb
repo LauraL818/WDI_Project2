@@ -63,5 +63,10 @@
       <div class="col-md-8 col-md-offset-4">
         <%= t.submit 'Add Entry', class: 'btn entry-success' %>
      </div>
+
+
    </fieldset>
 <% end %>
+<div class="col-md-5 col-md-offset-4 btn back-from-edit">
+  <%= link_to "Back to Profile", user_path(current_user), {style:'color: #446870;'}  %>  </div>
+</div>
