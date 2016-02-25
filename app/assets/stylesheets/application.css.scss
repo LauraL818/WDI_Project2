@@ -38,6 +38,14 @@ padding-top: 40px;
 padding-bottom: 40px;
 }
 
+.navbar {
+  background-color: $primaryColor;
+}
+
+.navbar a{
+  color: white;
+}
+
 .login_screen {
   max-height: 500px;
   width: 100%;
@@ -273,7 +281,7 @@ padding-bottom: 40px;
 
 .stadium-header {
   margin-bottom: 10px;
-  color: $secondaryColor;
+  color: white;
   text-shadow: 2px 2px 5px $primaryColor ;
 }
 
@@ -281,5 +289,17 @@ padding-bottom: 40px;
   margin-top: -15px;
   margin-bottom: 10px;
   color: $secondaryColor;
+}
 
+// Stadium list styling
+.stadium-name {
+  margin-top: 25px;
+  background-color: $primaryColor;
+  height: 100%;
+  box-shadow: 0 1px 7px rgba(0,0,0,0.6);
+}
+
+.stadium-name h1 {
+  color: $secondaryColor;
+  text-shadow: 1px 1px $primaryColor;
 }

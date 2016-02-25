@@ -1,9 +1,22 @@
 <div class="container">
   <div class="row">
-    <h1>Stadiums</h1>
+      <div class="col-md-2 stadium-name text-center">
+        <h1>Stadiums</h1>
+        <% @stadiums.each do |s| %>
+        <%= link_to s.name, stadium_path(s), style:'color:white;' %><br>
+        <% end  %>
+      </div>
+
+      <div class="col-md-8 text-center">
+        <h1 class="stadium-header">Stadium Map</h1>
+        <img src="/photos/mlb.jpg" class="center-block stadium-picture"/>
+      </div>
+
+      <div class="col-md-2 stadium-name text-center">
+        <h1>Teams</h1>
+        <% @stadiums.each do |s| %>
+        <%= link_to s.team, stadium_path(s), style:'color:white;' %><br>
+        <% end  %>
+    </div>
   </div>
-  <img src="/photos/mlb.jpg" height="800px" width="1000px"/><br>
-  <% @stadiums.each do |s| %>
-  <%= link_to s.name, stadium_path(s) %>, <%= s.team %><br>
-  <% end  %>
 </container>
