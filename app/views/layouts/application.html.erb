@@ -27,20 +27,29 @@
 
 
     <script>
-    $('.alert').delay(3000).slideUp()
-    $(document).ready(function(){
-     $('.navbar .dropdown').hover(function() {
-         $(this).find('.dropdown-menu').first().stop(true, true).delay(100).slideDown(50);
-     }, function() {
-         $(this).find('.dropdown-menu').first().stop(true, true).delay(50).slideUp(50)
-     });
-    })
+      // animates dropdown menu
+      $('.alert').delay(3000).slideUp()
+      $(document).ready(function(){
+       $('.navbar .dropdown').hover(function() {
+           $(this).find('.dropdown-menu').first().stop(true, true).delay(100).slideDown(50);
+       }, function() {
+           $(this).find('.dropdown-menu').first().stop(true, true).delay(50).slideUp(50)
+       });
+      })
 
+
+      // makes entry photo larger on hover
+        $('.entry-picture').hover(makeBigger, returnToOriginalSize);
+
+        function makeBigger() {
+            $(this).css({height: '+=300%', width: '+=300%'});
+        }
+        function returnToOriginalSize() {
+            $(this).css({height: "", width: ""});
+        }
     </script>
 
-
     <%= yield %>
-
 
   </body>
 

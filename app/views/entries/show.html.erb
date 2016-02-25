@@ -14,13 +14,13 @@
 
     <div class="row text-center">
       <div class="col-md-2 col-md-offset-3">
-        <h5><%= @entry.stadium.team %></h5>
+        <h5><%= link_to @entry.stadium.team, stadium_path(@entry.stadium), {style:'color: #446870;'}%></h5>
       </div>
       <div class="col-md-2">
-        <h5><%= @entry.stadium.name %></h5>
+        <h5><%= link_to @entry.stadium.name, stadium_path(@entry.stadium), {style:'color: #446870;'}%></h5>
       </div>
       <div class="col-md-2">
-        <h5><%= @entry.stadium.location %></h5>
+        <h5><%= link_to @entry.stadium.location, stadium_path(@entry.stadium), {style:'color: #446870;'} %></h5>
       </div>
     </div>
 
@@ -32,7 +32,7 @@
 
     <div class="row">
       <div class="col-md-8  col-md-offset-4">
-          <%= image_tag @entry.avatar(:medium),class:'img-responsive entry-picture style_image'%>
+      <%= image_tag @entry.avatar(:medium),class:'img-responsive entry-picture style_image'%>
       </div>
     </div>
   </div>
@@ -53,12 +53,12 @@
 
 
 <script>
-$('.img-responsive').hover(makeBigger, returnToOriginalSize);
-
-function makeBigger() {
-    $(this).css({height: '+=200%', width: '+=200%'});
-}
-function returnToOriginalSize() {
-    $(this).css({height: "", width: ""});
-}
+// $('.img-responsive').hover(makeBigger, returnToOriginalSize);
+//
+// function makeBigger() {
+//     $(this).css({height: '+=200%', width: '+=200%'});
+// }
+// function returnToOriginalSize() {
+//     $(this).css({height: "", width: ""});
+// }
 </script>

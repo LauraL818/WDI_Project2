@@ -4,7 +4,7 @@
       <div class="col-md-10 col-md-offset-2"><h1 class="text-center header">Trip Journal</h1></div>
     </div>
     <div class="row">
-      <div class="col-md-2 text-center"><%= image_tag(@user.avatar.url(:thumb), class:"img-rounded")%>
+      <div class="col-md-2 text-center"><%= image_tag(@user.avatar.url(:thumb), class:"img-thumbnail")%>
         <div class="row">
           <div class="col-md-12"><h2 class="name"><%= @user.first_name %></h2></div>
         </div>
@@ -33,7 +33,7 @@
             <p><%= e.body %></p>
           </div>
           <div class="row">
-          <%= image_tag e.avatar.url(:medium), class:"style_image"%>
+          <%= image_tag e.avatar.url(:medium), class:"style_image feed-picture"%>
           </div>
 
           <% end %>

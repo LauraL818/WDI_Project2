@@ -1,6 +1,9 @@
-<h1>New Entry</h1>
-
-  <%= form_for @entry, html: { multipart: true } do |t|  %>
+<div class="row">
+  <div class="col-md-12 text-center">
+    <h1 class="member">Add Entry</h1>
+  </div>
+</div>
+  <!-- <%= form_for @entry, html: { multipart: true } do |t|  %>
 
   <%= t.label :title, "Title" %>
   <%= t.text_field :title %><br>
@@ -18,4 +21,47 @@
   <%= t.file_field :avatar %><br>
 
     <%= t.submit "Create Entry" %>
-  <% end  %>
+  <% end  %> -->
+
+    <%= form_for @entry, html: { multipart: true, class: 'form-horizontal add-entry' } do |t|  %>
+   <fieldset>
+     <div class="form-group">
+         <%= t.label :title, "Title", class: 'col-md-4 control-label' %>
+       <div class="col-md-5">
+         <%= t.text_field :title, class:'form-control' %>
+       </div>
+     </div>
+
+     <div class="form-group">
+         <%= t.label :stadium_id, 'Stadium', class: 'col-md-4 control-label' %>
+       <div class="col-md-5">
+         <%= t.collection_select :stadium_id, Stadium.all, :id, :name, class: 'form-control'%>
+       </div>
+     </div>
+
+     <div class="form-group">
+         <%= t.label :date, 'Date', class: 'col-md-4 control-label' %>
+       <div class="col-md-5">
+             <%= t.text_field :date, class: 'form-control'%>
+       </div>
+     </div>
+
+     <div class="form-group">
+         <%= t.label :body, 'Details & Memories', class: 'col-md-4 control-label' %>
+       <div class="col-md-5">
+             <%= t.text_area :body, class: 'form-control' %>
+       </div>
+     </div>
+
+     <div class="form-group">
+         <%= t.label :avatar, 'Photo', class: 'col-md-4 control-label' %>
+       <div class="col-md-5">
+             <%= t.file_field :avatar%>
+       </div>
+     </div>
+
+      <div class="col-md-8 col-md-offset-4">
+        <%= t.submit 'Add Entry', class: 'btn entry-success' %>
+     </div>
+   </fieldset>
+<% end %>
