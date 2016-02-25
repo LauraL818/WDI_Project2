@@ -8,39 +8,40 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
 </head>
-<body>
 
-  <% if flash[:failure]  %>
-    <div class = "alert alert-danger text-center"> <%= flash[:failure] %></div>
-  <% end %>
+  <body>
 
-  <% if flash[:success]  %>
-    <div class = "alert alert-success text-center"> <%= flash[:success] %></div>
-  <% end %>
+    <% if flash[:failure]  %>
+      <div class = "alert alert-danger text-center"> <%= flash[:failure] %></div>
+    <% end %>
 
-  <% if logged_in? %>
-      <%= render 'sessions/login' %>
-    <%else  %>
-      <%= render 'sessions/logout' %>
-  <%end %>
+    <% if flash[:success]  %>
+      <div class = "alert alert-success text-center"> <%= flash[:success] %></div>
+    <% end %>
 
-
-  <script>
-  $('.alert').delay(3000).slideUp()
-  $(document).ready(function(){
-   $('.navbar .dropdown').hover(function() {
-       $(this).find('.dropdown-menu').first().stop(true, true).delay(100).slideDown(50);
-   }, function() {
-       $(this).find('.dropdown-menu').first().stop(true, true).delay(50).slideUp(50)
-   });
-  })
-
-  </script>
+    <% if logged_in? %>
+        <%= render 'sessions/login' %>
+      <%else  %>
+        <%= render 'sessions/logout' %>
+    <%end %>
 
 
-  <%= yield %>
+    <script>
+    $('.alert').delay(3000).slideUp()
+    $(document).ready(function(){
+     $('.navbar .dropdown').hover(function() {
+         $(this).find('.dropdown-menu').first().stop(true, true).delay(100).slideDown(50);
+     }, function() {
+         $(this).find('.dropdown-menu').first().stop(true, true).delay(50).slideUp(50)
+     });
+    })
+
+    </script>
 
 
+    <%= yield %>
 
-</body>
+
+  </body>
+
 </html>

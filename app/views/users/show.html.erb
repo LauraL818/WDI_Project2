@@ -1,45 +1,49 @@
 <div class="container">
-  <div class="row">
-    <div class="col-md-3"><h1 class="text-center"><%= @user.first_name %></h1></div>
-    <div class="col-md-8 col-md-offset-1"><h1 class="text-center">Entry Feed</h1>
-      <div class="row">
-        <div class="col-md-12 text-center">
-          <div class="btn btn-info btn-sm"><%= link_to "Add New Entry", new_entry_path, {style:'color:black;', class: "links"}%></div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-3 info text-center"><%= image_tag(@user.avatar.url(:thumb), class:"img-rounded")%>
-      <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-          <p><%= @user.favorite %></p>
-        </div>
-      </div>
-      <div class="row">
-          <div class="col-md-12 text-center">
-            <%= link_to "Edit Profile", edit_user_path, {style:'color:purple;', class: "links"} %>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12 text-center">
-            <%= link_to "Delete Profile", user_path, style:'color:purple', method: :delete, data:({confirm: "Are you sure you want to delete your profile?"}) %>
-          </div>
-        </div>
-    </div>
-      <div id="entry" class="col-md-8 col-md-offset-1 text-center">
-        <% @user.entries.each do |e| %>
-        <div class="row">
-          <h2 class="text-center"><%= link_to e.title, entry_path(e)%></h2>
-        </div>
-        <div class="row">
-          <h5 class="col-md-3 col-md-offset-3"><%= e.stadium.name %></h5>
-          <h5 class="col-md-3">Date: <%= e.date %></h5>
-        </div>
-        <%= e.body %><br>
-        <%= image_tag e.avatar.url(:medium), class:"style_image"%><br>
-        <% end %>
-      </div>
-  </div>
+    <div class="row">
 
+      <div class="col-md-10 col-md-offset-2"><h1 class="text-center header">Trip Journal</h1></div>
+    </div>
+    <div class="row">
+      <div class="col-md-2 text-center"><%= image_tag(@user.avatar.url(:thumb), class:"img-rounded")%>
+        <div class="row">
+          <div class="col-md-12"><h2 class="header name"><%= @user.first_name %></h2></div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+              <%= link_to "Edit Profile", edit_user_path, {class: "btn edit-button"} %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <%= link_to "Delete Profile", user_path, class:"btn delete-button", method: :delete, data:({confirm: "Are you sure you want to delete your profile?"}) %>
+            </div>
+          </div>
+      </div>
+
+        <div id="entry" class="col-md-10 text-center">
+          <% @user.entries.reverse.each do |e| %>
+          <div class="row">
+            <h2 class="text-center"><%= link_to e.title, entry_path(e),{style:'color:#180D06;', class: "links"}%></h2>
+          </div>
+          <div class="row">
+            <h4 class="col-md-3 col-md-offset-3"><%= link_to e.stadium.name, stadium_path(e.stadium), {style:'color:#180D06;'} %></h4>
+            <h4 class="col-md-3">Date: <%= e.date %></h4>
+          </div>
+          <div class="row post-body">
+            <p><%= e.body %></p>
+          </div>
+          <div class="row">
+          <%= image_tag e.avatar.url(:medium), class:"style_image"%>
+          </div>
+
+          <% end %>
+        </div>
+        <divclass="row">
+          <div  id= "add-entry" class="col-md-10 col-md-offset-2 text-center">
+            <div id="entry-button" class="btn btn-block"><%= link_to "Add New Entry", new_entry_path, {style:'color:white;'}%></div>
+          </div>
+        </div>
+    </div>
+
+  </div>
 </div>

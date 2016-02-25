@@ -18,13 +18,21 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-$primaryColor: black;
-
 @mixin border-radius($radius) {
   -webkit-border-radius: $radius;
      -moz-border-radius: $radius;
       -ms-border-radius: $radius;
           border-radius: $radius;
+}
+
+body {
+background: url('/photos/plate.jpg') no-repeat center center fixed;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+padding-top: 40px;
+padding-bottom: 40px;
 }
 
 .login_screen {
@@ -40,37 +48,64 @@ $primaryColor: black;
   text-shadow: black 2px 1px;
 }
 
-.info {
-  background-color: gray;
-  @include border-radius(5px);
+.profile {
+  background-color: #014F13;
+  @include border-radius(2px);
   padding-top: 10px;
   padding-bottom: 10px;
 }
 
-.links {
+.header {
+  color:white;
+  text-shadow: 1px 1px black;
+}
+
+.name {
+  padding-top: 10px;
+  margin-top: -1px;
+}
+
+.delete-button {
+  margin-top: 5px;
+  font-weight: bold;
+  background-color:#446870;
   color:white;
 }
 
+.edit-button {
+  color: #446870;
+  font-weight: bold;
+  background-color:#CDF3FC;
+  margin-top: -5px;
+}
+
 #entry {
-  background-color: gray;
-  @include border-radius(20px);
+  background-color: rgba(211, 190, 171, 0.7);;
+  @include border-radius(2px);
+  margin-top: 10px;
+  padding-bottom: 20px;
+  color:#180D06;
+  box-shadow: 5px 5px 25px black;
+  font-family: 'Futura';
+}
+
+#add-entry {
   margin-top: 10px;
 }
 
+#entry-button{
+  background-image: linear-gradient(#014F13, #161917);
+  border-color: #161917;
+  text-shadow: 1px 1px black;
+}
+
 .style_image {
-  @include border-radius(5px);
-  border: 3px solid white;
+  @include border-radius(2px);
+  border: 2px solid white;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
-body {
-  padding-top: 40px;
-  padding-bottom: 40px;
-}
-
-h1 {
-  color:$primaryColor;
-}
-
-p {
-  color: $primaryColor;
+.post-body {
+  margin: 0 10px;
 }
