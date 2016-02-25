@@ -1,8 +1,62 @@
-<h1><%= @stadium.name %></h1>
-<h5><%= @stadium.team %></h5>
-<h5><%= @stadium.location %></h5>
-<h5>Opened: <%= @stadium.year %></h5>
-<h5>History: <%= @stadium.history %></h5>
-<h5>Capacity: <%= @stadium.capacity %></h5>
-<h5>Best Feature: <%= @stadium.feature %></h5>
-<img src="/photos/<%= @stadium.photo%>" alt="stadium photo" height="500" width="500" />
+<div id="wrapper">
+
+  <!-- Sidebar -->
+  <div id="sidebar-wrapper">
+    <ul class="sidebar-nav text-center">
+      <li><h2>Fast Facts</h2></li>
+      <li><h4>Opened: </h4>
+        <h5><%= @stadium.year %></h5>
+      </li>
+      <li><h4>Capacity: </h4>
+        <h5><%= @stadium.capacity %></h5>
+      </li>
+      <li><h4>Best Feature: </h4>
+        <h5><%= @stadium.feature %></h5>
+      </li>
+      <li><h4>History: </h4>
+        <h5><%= @stadium.history %></h5>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Page Content -->
+  <div id="page-content-wrapper">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12 text-center stadium-header">
+          <h1><%= @stadium.name %></h1>
+        </div>
+
+        <div class="col-md-12 text-center stadium-subheader">
+          <h4><%= @stadium.team %></h4>
+          <h5><%= @stadium.location %></h5>
+          <a href="#" class="btn btn-sm view-more" id="sidebar-toggle">View Stadium Details</a>
+        </div>
+      </div>
+
+      <div class="row stadium">
+        <div class="col-md-12">
+          <img src="/photos/<%= @stadium.photo%>" alt="stadium photo" class="center-block stadium-picture" />
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+</div>
+<!-- Sidebar toggle-->
+<script>
+  $('#sidebar-toggle').click(function(e){
+      e.preventDefault()
+      $('#wrapper').toggleClass('sidebarDisplayed')
+  })
+</script>
+
+  <!-- <div class="col-md-3 text-center">
+      <h5>Opened: <%= @stadium.year %></h5>
+
+      <h5>History: <%= @stadium.history %></h5>
+      <h5>Capacity: <%= @stadium.capacity %></h5>
+      <h5>Best Feature: <%= @stadium.feature %></h5>
+  </div>  -->
