@@ -20,7 +20,7 @@
 #### Stadium Page
 ![Entry Page](app/assets/images/stadium.png)
 
-## ERD Diagram
+## Entity Relationship Diagram
 ![ERD](app/assets/images/erd.png)
 
 ## User Stories
