@@ -61,15 +61,21 @@
 
 </div>
 
-<div class="row text-center">
+<div class="row text-center log">
 	<button type="button" class="btn btn-round">
-		<img class="img-responsive  login-circle" src="../photos/batter.png"/>
+		<img class="img-responsive  login-circle" src="../photos/national.jpg"/>
+		<span><%= link_to "Log In to View Your Account", users_path, style:'color:#CDF3FC;' %></span>
 	</button>
 	<button type="button" class="btn btn-round sign-up circle">
-		<img class="img-responsive  login-circle" src="../photos/catcher.png"/>
+		<img class="img-responsive  login-circle" src="../photos/default.png"/>
+		<span><%= link_to "View All MLB Stadiums", stadiums_path, style:'color:#CDF3FC;' %></span>
 	</button>
 	<button type="button" class="btn btn-round stadiums-circle">
-		<img class="img-responsive  login-circle" src="../photos/player.png"/>
+		<img class="img-responsive  login-circle" src="../photos/american.jpg"/>
+		<span> Get Started! <br>	<%= link_to "
+		 Become a member", new_user_path, style:'color:#CDF3FC;' %>
+</span>
+
 	</button>
 </div>
 

@@ -304,12 +304,14 @@ padding-bottom: 40px;
   text-shadow: 1px 1px $primaryColor;
 }
 
+
+// Home screen button styling
 .btn-round {
     width: 250px;
     height: 250px;
     border-radius: 50%;
     margin: 70px;
-    background-color: white;
+    background-color: transparent;
 }
 
 .login-circle {
@@ -317,3 +319,27 @@ padding-bottom: 40px;
   height: 250px;
   border-radius: 50%;
 }
+
+
+// Buttons styling changes on hover
+.btn-round:hover {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    margin: 70px;
+    background-color:$primaryColor;
+    color:$secondaryColor;
+}
+
+.login-circle:hover {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background-color: $primaryColor;
+  color: $secondaryColor;
+  font-weight: bold;
+}
+
+.log button span{ display:none; }
+.log button:hover span{ display:inline; }
+.log button:hover img{ display:none; }
