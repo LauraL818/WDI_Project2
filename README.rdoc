@@ -4,7 +4,7 @@
 
 #### App Link: https://baseball-journey.herokuapp.com
 
-## Wireframes:
+## Wireframes
 #### Login Page
 ![Login Page](app/assets/images/first.png)
 
@@ -23,7 +23,7 @@
 ## ERD Diagram:
 ![ERD](app/assets/images/erd.png)
 
-## User Stories:
+## User Stories
 
 | As a User I want:  |Goal:           |
 | -------------       |-------------|
@@ -36,7 +36,7 @@
 | To be able see and edit all of the content in my profile| To edit my information, my posts, or delete my account |
 | All of my posts to be organized and easy to read| To enjoy my experience on the site and recall past posts easily |
 
-## Technologies/Frameworks Used:
+## Technologies/Frameworks Used
 * Ruby
 * Rails
 * Bootstrap
@@ -44,7 +44,7 @@
 * JavaScript & jQuery
 * HTML/CSS
 
-## Future Improvements:
+## Future Improvements
 * Allow users to comment on stadium pages to make it more social and interactive
 * Add a wish list model so users can add stadiums to their wish list
 * Allow user to add multiple pictures per entry
