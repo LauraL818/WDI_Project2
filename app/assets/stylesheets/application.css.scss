@@ -52,10 +52,12 @@ font-family: 'Oswald', sans-serif;
 
 .nav.navbar-nav li{
   background-image: linear-gradient(#97B3BA, $primaryColor);
+  
 }
 
 .dropdown-menu{
   background-image: linear-gradient(#97B3BA, $primaryColor);
+
 }
 
 .nav.navbar-nav li a {
@@ -227,7 +229,6 @@ legend {
   padding-bottom: 20px;
   color:#180D06;
   box-shadow: 5px 5px 25px black;
-  font-family: 'Futura';
 }
 
 #main-entry {
@@ -246,7 +247,6 @@ legend {
 #entry-button{
   background-color: $primaryColor;
   border-color: $primaryColor;
-  text-shadow: 1px 1px black;
 }
 
 .style_image {
