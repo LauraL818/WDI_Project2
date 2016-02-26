@@ -1,8 +1,15 @@
 <div class="container">
-    <div class="row">
 
+    <div class="row">
       <div class="col-md-10 col-md-offset-2"><h1 class="text-center header">Trip Journal</h1></div>
     </div>
+
+    <div class="row">
+      <div  id= "add-entry" class="col-md-10 col-md-offset-2 text-center">
+        <div id="entry-button" class="btn btn-sm"><%= link_to "Add New Entry", new_entry_path, {style:'color:white;'}%></div>
+      </div>
+    </div>
+
     <div class="row">
       <div class="col-md-2 text-center"><%= image_tag(@user.avatar.url(:thumb), class:"img-thumbnail")%>
         <div class="row">
@@ -18,32 +25,43 @@
               <%= link_to "Delete Profile", user_path, class:"btn delete-button", method: :delete, data:({confirm: "Are you sure you want to delete your profile?"}) %>
             </div>
           </div>
+
+          <h4 class="visited"> Stadiums visited:</h4>
+          <div class="control-group done">
+            <label class="radio">
+                <% Stadium.all.each do |s| %>
+                <input type="checkbox" style="float:right">
+                <%= link_to s.name, stadium_path(s),{style:'color:white;'} %><br>
+                <% end %>
+            </label>
+          </div>
       </div>
 
-        <div id="entry" class="col-md-10 text-center">
-          <% @user.entries.reverse.each do |e| %>
-          <div class="row">
-            <h2 class="text-center"><%= link_to e.title, entry_path(e),{style:'color:#180D06;', class: "links"}%></h2>
-          </div>
-          <div class="row">
-            <h4 class="col-md-3 col-md-offset-3"><%= link_to e.stadium.name, stadium_path(e.stadium), {style:'color:#180D06;'} %></h4>
-            <h4 class="col-md-3">Date: <%= e.date %></h4>
-          </div>
-          <div class="row post-body">
-            <p><%= e.body %></p>
-          </div>
-          <div class="row">
-          <%= image_tag e.avatar.url(:medium), class:"style_image feed-picture"%>
-          </div>
+      <div id="entry" class="col-md-10 text-center">
+        <% @user.entries.reverse.each do |e| %>
+        <div class="row">
+          <h2 class="text-center"><%= link_to e.title, entry_path(e),{style:'color:#180D06;'}%></h2>
+        </div>
+        <div class="row">
+          <h4 class="col-md-3 col-md-offset-3"><%= link_to e.stadium.name, stadium_path(e.stadium), {style:'color:#180D06;'} %></h4>
+          <h4 class="col-md-3">Date: <%= e.date %></h4>
+        </div>
+        <div class="row post-body">
+          <p><%= e.body %></p>
+        </div>
+        <div class="row">
+        <%= image_tag e.avatar.url(:medium), class:"style_image feed-picture"%>
+        </div>
+        <% end %>
+      </div>
 
-          <% end %>
-        </div>
-        <divclass="row">
-          <div  id= "add-entry" class="col-md-10 col-md-offset-2 text-center">
-            <div id="entry-button" class="btn btn-block"><%= link_to "Add New Entry", new_entry_path, {style:'color:white;'}%></div>
-          </div>
-        </div>
     </div>
-
   </div>
-</div>
+
+  <script>
+  // Checks and unchecks stadiums
+    var check;
+    $('input[type="checkbox"]').click(function() {
+        $(this).attr("checked", check);
+    });
+  </script>

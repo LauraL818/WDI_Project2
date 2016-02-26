@@ -41,11 +41,27 @@ padding-bottom: 40px;
 
 ////////////////////////////////////NAVBAR STYLING//////////////////////////////
 .navbar {
-  background-color: $primaryColor;
+  background-image: linear-gradient(#97B3BA, $primaryColor);
+  border: none;
 }
 
 .navbar a{
   color: white;
+}
+
+.nav.navbar-nav li{
+  background-image: linear-gradient(#97B3BA, $primaryColor);
+}
+
+.dropdown-menu{
+  background-image: linear-gradient(#97B3BA, $primaryColor);
+}
+
+.nav.navbar-nav li a {
+  color: white;
+  overflow: scroll;
+  background-image: linear-gradient(#97B3BA, $primaryColor);
+  background-size: cover;
 }
 
 ///////////////////////////////LOGIN SCREEN STYLING///////////////////////////
@@ -149,6 +165,24 @@ legend {
   margin-top: -5px;
 }
 
+//Stadium checklist styling
+.done {
+  margin-bottom: 2px;
+  padding: 10px;
+  list-style: none;
+  text-align: left;
+  background-color: rgba(68,104,112,0.7);
+  color:white;
+}
+
+.visited {
+  margin-top: 10px;
+  color:white;
+  margin-bottom: -10px;
+  background-color: rgba(68,104,112,0.7);
+  text-decoration: underline;
+}
+
 ////////////////////////////ENTRY STYLING/////////////////////////////////
 .edit-entry {
   color: #446870;
@@ -183,7 +217,6 @@ legend {
   font-weight: bold;
   background-color:$secondaryColor;
   margin-top: 10px;
-
 }
 
 #entry {
@@ -210,7 +243,7 @@ legend {
 }
 
 #entry-button{
-  background-image: linear-gradient(#97B3BA, $primaryColor);
+  background-color: $primaryColor;
   border-color: $primaryColor;
   text-shadow: 1px 1px black;
 }
@@ -228,7 +261,7 @@ legend {
 
 .add-entry{
   margin-top: 20px;
-  background-image: linear-gradient(#87CEDE, $primaryColor);
+  background-color: $primaryColor;
   padding: 15px 0;
   color: #FFF3E8;
   text-shadow: .5px .5px black;
