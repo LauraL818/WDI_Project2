@@ -38,26 +38,30 @@ background-size: cover;
 padding-top: 40px;
 padding-bottom: 40px;
 font-family: 'Oswald', sans-serif;
+
 }
 
 ////////////////////////////////////NAVBAR STYLING//////////////////////////////
 .navbar {
   background-image: linear-gradient(#97B3BA, $primaryColor);
   border: none;
+
 }
 
 .navbar a{
   color: white;
+
 }
 
 .nav.navbar-nav li{
   background-image: linear-gradient(#97B3BA, $primaryColor);
-  
+
 }
 
 .dropdown-menu{
   background-image: linear-gradient(#97B3BA, $primaryColor);
-
+  max-height: 500px;
+  overflow: scroll;
 }
 
 .nav.navbar-nav li a {
