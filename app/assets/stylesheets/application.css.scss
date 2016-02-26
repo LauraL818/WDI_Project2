@@ -18,6 +18,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+////////////////////////////GLOBAL STYLING//////////////////////////
 $primaryColor: #446870;
 $secondaryColor: #CDF3FC;
 
@@ -38,6 +39,7 @@ padding-top: 40px;
 padding-bottom: 40px;
 }
 
+////////////////////////////////////NAVBAR STYLING//////////////////////////////
 .navbar {
   background-color: $primaryColor;
 }
@@ -46,6 +48,7 @@ padding-bottom: 40px;
   color: white;
 }
 
+///////////////////////////////LOGIN SCREEN STYLING///////////////////////////
 .login_screen {
   max-height: 500px;
   width: 100%;
@@ -58,7 +61,55 @@ padding-bottom: 40px;
 .carousel-caption p {
   text-shadow: black 2px 1px;
 }
+// Home screen button styling
+.btn-round {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    margin: 70px;
+    background-color: transparent;
+}
 
+.login-circle {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+}
+
+
+// Buttons styling changes on hover
+.btn-round:hover {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    margin: 70px;
+    background-color:$primaryColor;
+    color:$secondaryColor;
+}
+
+.login-circle:hover {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background-color: $primaryColor;
+  color: $secondaryColor;
+  font-weight: bold;
+}
+
+.log button span{ display:none; }
+.log button:hover span{ display:inline; }
+.log button:hover img{ display:none; }
+
+.sign-in {
+  background-color: rgba(68,104,112,0.7);
+  color:$secondaryColor;
+  margin-top: 10px;
+}
+
+legend {
+  color:$secondaryColor;
+}
+/////////////////////////////////////PROFILE PAGE STYLING//////////////////////
 .profile {
   background-color: #014F13;
   @include border-radius(2px);
@@ -77,6 +128,13 @@ padding-bottom: 40px;
   margin-top: -1px;
 }
 
+.feed-picture {
+  border: none;
+  box-shadow: 0 1px 7px rgba(0,0,0,0.6);
+  -o-transform: scale(1,1); -ms-transform: scale(1,1); -moz-transform: scale(1,1); -webkit-transform: scale(1,1); transform: scale(1,1); -o-transition: all 0.2s ease-in-out; -ms-transition: all 0.2s ease-in-out; -moz-transition: all 0.2s ease-in-out; -webkit-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out;
+}
+
+//Buttons to edit and delete profile styling
 .delete-button {
   margin-top: 5px;
   font-weight: bold;
@@ -91,6 +149,7 @@ padding-bottom: 40px;
   margin-top: -5px;
 }
 
+////////////////////////////ENTRY STYLING/////////////////////////////////
 .edit-entry {
   color: #446870;
   font-weight: bold;
@@ -167,13 +226,6 @@ padding-bottom: 40px;
   margin: 0 10px;
 }
 
-.new-user{
-  margin-top: 20px;
-  color: #FFF3E8;
-  background-color: $primaryColor;
-  padding: 15px 0;
-}
-
 .add-entry{
   margin-top: 20px;
   background-image: linear-gradient(#87CEDE, $primaryColor);
@@ -182,10 +234,24 @@ padding-bottom: 40px;
   text-shadow: .5px .5px black;
 }
 
+.entry-picture {
+  margin-left: 20px;
+  border: none;
+  box-shadow: 0 1px 7px rgba(0,0,0,0.6);
+  -o-transform: scale(1,1); -ms-transform: scale(1,1); -moz-transform: scale(1,1); -webkit-transform: scale(1,1); transform: scale(1,1); -o-transition: all 0.2s ease-in-out; -ms-transition: all 0.2s ease-in-out; -moz-transition: all 0.2s ease-in-out; -webkit-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out;
+}
+
 .entry-success{
   color: $primaryColor;
   font-weight: bold;
   background-color:$secondaryColor;
+}
+///////////////NEW MEMBER STYLING////////////////////////////////
+.new-user{
+  margin-top: 20px;
+  color: #FFF3E8;
+  background-color: $primaryColor;
+  padding: 15px 0;
 }
 
 .member {
@@ -199,18 +265,7 @@ padding-bottom: 40px;
   background-color:$secondaryColor;
 }
 
-.entry-picture {
-  margin-left: 20px;
-  border: none;
-  box-shadow: 0 1px 7px rgba(0,0,0,0.6);
-  -o-transform: scale(1,1); -ms-transform: scale(1,1); -moz-transform: scale(1,1); -webkit-transform: scale(1,1); transform: scale(1,1); -o-transition: all 0.2s ease-in-out; -ms-transition: all 0.2s ease-in-out; -moz-transition: all 0.2s ease-in-out; -webkit-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out;
-}
-
-.feed-picture {
-  border: none;
-  box-shadow: 0 1px 7px rgba(0,0,0,0.6);
-  -o-transform: scale(1,1); -ms-transform: scale(1,1); -moz-transform: scale(1,1); -webkit-transform: scale(1,1); transform: scale(1,1); -o-transition: all 0.2s ease-in-out; -ms-transition: all 0.2s ease-in-out; -moz-transition: all 0.2s ease-in-out; -webkit-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out;
-}
+/////////////////////////STADIUM STYLING//////////////////////////////////
 
 // Stadium sidebar styling
 #sidebar-wrapper {
@@ -228,7 +283,7 @@ padding-bottom: 40px;
 }
 
 .sidebar-nav li{
-  margin-top: 20px;
+  margin-top: 30px;
   text-indent:20px;
   line-height: 80px;
   display: block;
@@ -303,43 +358,3 @@ padding-bottom: 40px;
   color: $secondaryColor;
   text-shadow: 1px 1px $primaryColor;
 }
-
-
-// Home screen button styling
-.btn-round {
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    margin: 70px;
-    background-color: transparent;
-}
-
-.login-circle {
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-}
-
-
-// Buttons styling changes on hover
-.btn-round:hover {
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    margin: 70px;
-    background-color:$primaryColor;
-    color:$secondaryColor;
-}
-
-.login-circle:hover {
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  background-color: $primaryColor;
-  color: $secondaryColor;
-  font-weight: bold;
-}
-
-.log button span{ display:none; }
-.log button:hover span{ display:inline; }
-.log button:hover img{ display:none; }
